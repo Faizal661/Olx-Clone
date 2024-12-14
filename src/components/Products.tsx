@@ -1,121 +1,25 @@
-import guitar from "../assets/guitar.png";
-const Products = () => {
-  const arr = [
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-    {
-      image: guitar,
-      name: "products",
-      price: 1234,
-      year: 2023,
-      place: "indiaaa",
-      description: "lorem lipsum sakhjsda  hfsdkhk sf kjjshdfkh sd",
-    },
-  ];
-  return <div className=" mx-28 my-12  grid grid-cols-4 gap-3">
-    {arr.map((item)=>{
-        return <div className="border-2 border-black rounded-md h-[17em]" key={item.name}>
-            <h1>{item.name}</h1>
-            <h1>{item.price}</h1>
-            <h1>{item.year}</h1>
-            <h1>{item.place}</h1>
+import { Link } from "react-router-dom"
+
+
+type productProp={
+  products:any
+}
+
+const Products = (props:productProp) => {
+  return <div className=" mx-28 my-12 grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+    {props?.products?.map((data:any)=>{
+        return <Link to="/Details" state={{data:data}}>
+         <div className="border border-slate-400 rounded-md h-[17em] p-2" key={data.id} >
+          <div className="flex justify-center p-2">
+          <img src={data?.image} alt="" className="p-4 w-52 h-40"/>
+          </div>
+          <h1 className="font-bold text-xl">₹ {data?.price}</h1>
+          <h1>{data?.category}</h1>
+          <h1>{data?.title.slice(0,33)+'...'}</h1>
         </div>
+        </Link>
     })}
-  </div>;
-};
+  </div>
+}
 
 export default Products;

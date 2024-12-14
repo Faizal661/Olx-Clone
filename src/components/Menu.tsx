@@ -1,7 +1,7 @@
 
 const Menu = () => {
   return (
-    <div className="flex gap-4 justify-center cursor-pointer my-1 py-3 border-2 border-slate-100">
+    <div className="flex gap-4 justify-center cursor-pointer my-1 py-3 border-2 border-slate-100 ">
       <h1 className="font-bold">ALL CATEGORIES </h1>
       <h1 className=" hover:text-cyan-500">Cars</h1>
       <h1 className=" hover:text-cyan-500">MotorCycles</h1>
